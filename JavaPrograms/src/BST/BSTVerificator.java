@@ -1,3 +1,5 @@
+package BST;
+
 public class BSTVerificator {
     private static int MAX_INT = Integer.MAX_VALUE;
     private static int MIN_INT = Integer.MIN_VALUE;

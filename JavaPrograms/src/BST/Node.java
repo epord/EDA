@@ -1,3 +1,5 @@
+package BST;
+
 /**
  * Created by Pedro on 28/3/2016.
  */

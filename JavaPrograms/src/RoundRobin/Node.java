@@ -3,7 +3,7 @@ package RoundRobin;
 /**
  * Created by Pedro on 6/4/2016.
  */
-class Node<E> {
+public class Node<E> {
     private E elem;
     private Node<E> next;
     private Node<E> previous;

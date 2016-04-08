@@ -1,15 +1,17 @@
-package EDATP2;
+package SimpleDoubleLinkedLists;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by Pedro on 6/4/2016.
  */
 public class Test {
     public static void main(String args[]) {
-        System.out.println("TESTING NP REPEATS ARRANGED LINKED LIST");
+
+        System.out.println("TESTING NO REPEATS ARRANGED LINKED LIST");
         NoRepeatsArrangedLinkedList<Integer> l1 = new NoRepeatsArrangedLinkedList<>();
+        NoRepeatsArrangedLinkedList<Integer> l2 = new NoRepeatsArrangedLinkedList<>();
 
         l1.add(5);
         l1.add(2);
@@ -18,9 +20,18 @@ public class Test {
         l1.add(4);
         l1.add(9);
 
+        l2.add(10);
+        l2.add(3);
+        l2.add(5);
+        l2.add(20);
+        l2.add(16);
+        l2.add(21);
+
         System.out.println(l1);
         l1.invert();
         System.out.println(l1);
+
+
 
         System.out.println("TESTING DOUBLE LINKED LIST");
 
@@ -34,10 +45,20 @@ public class Test {
         System.out.println(dl);
         dl.invert();
         System.out.println(dl);
+
+
+
+        System.out.println("MERGING ");
+        List<NoRepeatsArrangedLinkedList<Integer>> arr = new ArrayList<>();
+
+        arr.add(l1);
+        arr.add(l2);
+
+        System.out.println(merge(arr));
     }
 
     public static <T extends Comparable<T>> NoRepeatsArrangedLinkedList<T>
-    merge(ArrayList<NoRepeatsArrangedLinkedList<T>> arr) {
+                                        merge(List<NoRepeatsArrangedLinkedList<T>> arr) {
 
         Node<T>[] arrNode = new Node[arr.size()];
         int cantLists = arr.size();

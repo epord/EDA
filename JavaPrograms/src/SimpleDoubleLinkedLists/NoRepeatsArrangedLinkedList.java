@@ -1,6 +1,4 @@
-package EDATP2;
-
-import java.util.LinkedList;
+package SimpleDoubleLinkedLists;
 
 /**
  * Created by Pedro on 6/4/2016.

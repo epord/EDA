@@ -1,4 +1,4 @@
-package EDATP2;
+package SimpleDoubleLinkedLists;
 
 /**
  * Created by Pedro on 7/4/2016.
@@ -37,7 +37,7 @@ public class DoubleLinkedList<T> {
             return true;
         }
 //        if (first.getElem().compareTo(elem) > 0) {
-//            Node<T> auxNode = new Node<>(elem);
+//            BST.Node<T> auxNode = new BST.Node<>(elem);
 //            auxNode.setNext(first);
 //            first = auxNode;
 //            size++;
@@ -56,7 +56,7 @@ public class DoubleLinkedList<T> {
 //            return false;
 //        }
 //        if (n.getNext().getElem().compareTo(elem) > 0) {
-//            Node<T> auxNode = new Node<>(elem);
+//            BST.Node<T> auxNode = new BST.Node<>(elem);
 //            auxNode.setNext(n.getNext());
 //            n.setNext(auxNode);
 //            size++;
