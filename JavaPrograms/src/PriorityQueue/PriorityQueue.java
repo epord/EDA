@@ -50,18 +50,24 @@ public class PriorityQueue<T> {
 	}
 	
 	private void enqueueRec(Node<MyList<T>> n, T elem, int priority) {
-		if (n.getNext() == null && n.getPriority() != priority) {
+		if (n.getNext() == null && n.getPriority() < priority) {
 			Node<MyList<T>> auxN = new Node<>(new MyList<T>(), priority);
 			auxN.getElem().add(elem);
 			n.setNext(auxN);
+			return;
+		}
+		if (n.getPriority() < priority && n.getNext().getPriority() > priority) {
+			Node<MyList<T>> auxN = new Node<>(new MyList<T>(), priority);
+			auxN.getElem().add(elem);
+			auxN.setNext(n.getNext());
+			n.setNext(auxN);
+			return;
 		}
 		if (n.getPriority() == priority) {
 			n.getElem().add(elem);
 			return;
 		}
-		if (n.getPriority() < priority) { // prioritario si es menor
-			enqueueRec(n.getNext(), elem, priority);
-		}
+		enqueueRec(n.getNext(), elem, priority);
 		
 	}
 	

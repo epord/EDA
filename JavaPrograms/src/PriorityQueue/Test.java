@@ -3,28 +3,20 @@ package PriorityQueue;
 public class Test {
 
 	public static void main (String args[]) {
-		PriorityQueue<String> q = new PriorityQueue<>();
+		PriorityQueue<String> q = new PriorityQueue<String>();
 
-		q.enqueue("Importante", 2);
-		q.enqueue("Muy importante", 1);
-		q.enqueue("No muy importante", 3);
-		q.enqueue("Nada importante2", 8);
-		q.enqueue("Muy importante2", 1);
-		
-		while (!q.isEmpty()) {
+        q.enqueue("No muy importante", 3);
+        q.enqueue("Muy importante2", 1);
+        q.enqueue("Muy importante", 1);
+        q.enqueue("Importante", 2);
+        q.enqueue("Extremadamente importante", 0);
+        q.enqueue("Casi nada importante", 5);
+        q.enqueue("Nada importante", 8);
+        q.enqueue("Casi casi nada importante", 4);
+
+        while (!q.isEmpty()) {
 			System.out.println(q.dequeue());
 		}
-		
-//		MyList<String> l = new MyList<>();
-//		
-//		l.add("HHH");
-//		l.add("GGG");
-//		
-//		System.out.println(l.dequeue());
-//		System.out.println(l.dequeue());
-//		System.out.println(l.dequeue());
-//		System.out.println(l.dequeue());
-//		System.out.println(l.dequeue());
 	}
 	
 }
