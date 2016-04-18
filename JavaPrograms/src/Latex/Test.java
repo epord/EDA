@@ -11,22 +11,14 @@ public class Test {
     public static void main(String[] args) {
         Stack<String> stack = new Stack<>();
         Scanner sc = new Scanner(System.in);
-//        String s = sc.next();
-        String s = "\\begin{document}\n" +
-                "\n" +
-                "Hola mundo\n" +
-                "\n" +
-                "\\begin{center} Esta es una prueba de \\LaTeX \\begin{rmfamily}\n" +
-                "\n" +
-                "Hola que tal\n" +
-                "\n" +
-                "\\end{center} \\end{rmfamily}\n" +
-                "\n" +
-                "\\theend{document}";
+
+        String s = "\\begin{asd} \\end{asd}";
         char[] arr = s.toCharArray();
 
         int beginPos = s.indexOf("begin");
         int endPos = s.indexOf("end");
+
+        boolean closed = false;
 
         if (endPos == -1 && beginPos == -1) {
             System.out.println("VALIDO");
@@ -45,10 +37,11 @@ public class Test {
                 }
                 stack.pop();
                 endPos = s.indexOf("end", endPos + 1);
+                closed = true;
             }
         }
 
-        if (stack.empty()) {
+        if (stack.empty() && closed) {
             System.out.println("VALIDO");
         } else {
             System.out.println("INVALIDO");
