@@ -1,5 +1,7 @@
 package BinaryTree;
 
+import BST.Node;
+
 /**
  * Created by Pedro on 18/4/2016.
  */
@@ -49,6 +51,14 @@ public class BinaryTree<T> {
 
     public void setRight(BinaryTree<T> r) {
         right = r;
+    }
+
+    public boolean hasLeft() {
+        return left != null;
+    }
+
+    public boolean hasRight() {
+        return right != null;
     }
 
 }
