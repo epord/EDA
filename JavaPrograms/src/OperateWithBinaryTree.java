@@ -10,12 +10,12 @@ import java.util.function.Function;
 public class OperateWithBinaryTree {
 
     public static void main(String[] args) {
-        BinaryTree<Integer> t12 = new BinaryTree<Integer>(0, null, null);
-        BinaryTree<Integer> t5 = new BinaryTree<Integer>(2, null, null);
-        BinaryTree<Integer> t3 = new BinaryTree<Integer>(4, null, null);
-        BinaryTree<Integer> t8 = new BinaryTree<Integer>(1, t12, t5);
-        BinaryTree<Integer> t7 = new BinaryTree<Integer>(5, t3, null);
-        BinaryTree<Integer> t10 = new BinaryTree<Integer>(3, t8, t7);
+        BinaryTree<Integer> t12 = new BinaryTree<Integer>(12, null, null);
+        BinaryTree<Integer> t5 = new BinaryTree<Integer>(5, null, null);
+        BinaryTree<Integer> t3 = new BinaryTree<Integer>(3, null, null);
+        BinaryTree<Integer> t8 = new BinaryTree<Integer>(8, t12, t5);
+        BinaryTree<Integer> t7 = new BinaryTree<Integer>(7, t3, null);
+        BinaryTree<Integer> t10 = new BinaryTree<Integer>(10, t8, t7);
 
         // TESTING TREE CONVERSION WITH A FUNCTION
         System.out.print("Testing conversion:\n");
@@ -65,6 +65,10 @@ public class OperateWithBinaryTree {
                 return o1 > o2 ? 1 : -1;
             }
         }));
+
+        // is AVL?
+        System.out.print("\n----------------------------\nTesting AVL balance:\n");
+        calculateBalance(t10);
     }
 
     // converts a BinaryTree to another one changing values with a converting function
@@ -116,5 +120,22 @@ public class OperateWithBinaryTree {
             return false;
         }
         return isBSTRec(t.getLeft(), min, t.getElem(), cmp) && isBSTRec(t.getRight(), t.getElem(), max, cmp);
+    }
+
+    public static <T> int calculateBalance(BinaryTree<T> t) {
+        if (t == null) {
+            return 0;
+        }
+        int balance = Math.abs(calculateBalance(t.getLeft())) - Math.abs(calculateBalance(t.getRight()));
+        if (balance >= 2 || balance <= -2) {
+            System.out.println("BALANCE HIGHER THAN 2 OR LOWER THAN -2!!");
+            rotate(t);
+        }
+        System.out.println(t.getElem() + "(BF==" + balance + ")");
+        return Math.abs(balance) + 1;
+    }
+
+    private static <T> void rotate(BinaryTree<T> n) {
+        //NOT IMPLEMENTED
     }
 }
