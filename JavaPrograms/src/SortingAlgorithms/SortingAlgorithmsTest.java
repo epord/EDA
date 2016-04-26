@@ -10,7 +10,7 @@ import java.util.Stack;
 public class SortingAlgorithmsTest {
 
     public static void main(String[] args) {
-        int[] sizes = {50000, 100000, 200000, 400000, 800000};
+        int[] sizes = {1000, 50000, 100000, 200000, 400000, 800000};
         long start, time;
 
         for (int size : sizes) {
@@ -41,6 +41,11 @@ public class SortingAlgorithmsTest {
             QuickSort.sort(l, 0, l.size() - 1);
             time = System.currentTimeMillis() - start;
             System.out.println("QuickSort: " + time);
+
+            start = System.currentTimeMillis();
+            HeapSort.sort(l, (o1, o2) -> o2- o1);
+            time = System.currentTimeMillis() - start;
+            System.out.println("HeapSort: " + time);
         }
 
 
