@@ -24,7 +24,7 @@ public class Test {
         // SECOND TREE
         BinaryTree<String> aC = new BinaryTree<>("C", null, null);
         BinaryTree<String> aD = new BinaryTree<>("D", null, null);
-        BinaryTree<String> aB = new BinaryTree<>("B", aC, aD);
+        BinaryTree<String> aB = new BinaryTree<>("B", aD, aC);
         BinaryTree<String> aG = new BinaryTree<>("G", null, null);
         BinaryTree<String> aF = new BinaryTree<>("F", null, aG);
         BinaryTree<String> aA = new BinaryTree<>("A", aF, null);
