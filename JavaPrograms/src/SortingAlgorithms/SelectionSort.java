@@ -2,9 +2,6 @@ package SortingAlgorithms;
 
 import java.util.List;
 
-/**
- * Created by Pedro on 15/4/2016.
- */
 public class SelectionSort {
 
     public static <T extends Comparable<T>> void sort(List<T> l) {

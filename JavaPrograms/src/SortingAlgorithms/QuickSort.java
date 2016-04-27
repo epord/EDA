@@ -17,10 +17,10 @@ public class QuickSort {
         T pivot = list.get(right);
 
         while (i < j) {
-            while (list.get(j).compareTo(list.get(right)) >= 0 && i < j) {
+            while (list.get(j).compareTo(pivot) >= 0 && i < j) {
                 j--;
             }
-            while (list.get(i).compareTo(list.get(right)) < 0) {
+            while (list.get(i).compareTo(pivot) < 0) {
                 i++;
             }
             if (i < j) {
@@ -38,7 +38,7 @@ public class QuickSort {
 
     }
 
-    public static void quicksort(int A[], int izq, int der) {
+    private static void quicksort(int A[], int izq, int der) {
 
         int pivote=A[izq]; // tomamos primer elemento como pivote
         int i=izq; // i realiza la búsqueda de izquierda a derecha

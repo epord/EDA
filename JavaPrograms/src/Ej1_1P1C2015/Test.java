@@ -29,7 +29,7 @@ public class Test {
                                                                                                     // le tengo que restar
         return aux.maxHeigth-1 > aux.maxInternalPath-2 ? aux.maxHeigth-1 : aux.maxInternalPath-2;   // porque la raiz le devuelve
                                                                                                     // a otro nodo que no existe
-                                                                                                    // (raiz sobre raiz)
+                                                                                                    // (nodo por sobre la raiz)
     }
 
     private static <T> Box longestPathLengthRec(BinaryTree<T> t) {
